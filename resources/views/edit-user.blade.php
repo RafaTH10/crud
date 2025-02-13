@@ -6,6 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Editar Usuario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #4b0082;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .form-label {
+            color: #4b0082;
+        }
+        .form-control:focus {
+            border-color: #6a5acd;
+            box-shadow: 0 0 0 0.2rem rgba(106, 90, 205, 0.25);
+        }
+        .btn-primary {
+            background-color: #4b0082;
+            border-color: #4b0082;
+        }
+        .btn-primary:hover {
+            background-color: #6a5acd;
+            border-color: #6a5acd;
+        }
+        .text-danger {
+            color: #8b008b !important;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
