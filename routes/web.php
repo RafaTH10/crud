@@ -13,4 +13,6 @@ Route::get('/add-user', [UserController::class, 'LoadAddUserForm']);
 
 Route::post('/add-user', [UserController::class, 'AddUser'])->name('add-user');
 
+Route::get('/edit-user/{id}', [UserController::class, 'LoadEditUserForm']);
+
 

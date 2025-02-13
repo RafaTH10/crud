@@ -8,7 +8,7 @@ class UserController extends Controller
 {
     public function loadAllUsers(){
         $all_users = User::all();
-        return view('user');
+        return view('user', compact('all_users'));
     }
 
     public function LoadAddUserForm(){
@@ -31,5 +31,13 @@ class UserController extends Controller
         ]);
 
         return redirect('/user')->with('success', 'Usuario creado con éxito');
+
     }
+
+    public function LoadEditUserForm($id){
+        $user = User::find($id);
+        return view('edit-user', compact('user'));
+    }
+
+    
 }
