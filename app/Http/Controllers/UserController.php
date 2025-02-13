@@ -39,5 +39,21 @@ class UserController extends Controller
         return view('edit-user', compact('user'));
     }
 
-    
+    public function EditUser(Request $request, $id)
+    {
+        $request->validate([
+            'nombre_completo' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'numero_telefono' => 'required|numeric',
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->nombre_completo = $request->nombre_completo;
+        $user->email = $request->email;
+        $user->numero_telefono = $request->numero_telefono;
+        $user->save();
+
+        return redirect()->route('users.index')->with('success', 'Usuario actualizado correctamente');
+    }
+
 }

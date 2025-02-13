@@ -43,9 +43,7 @@
                                             @csrf
                                             <button type="submit" class="btn btn-primary">Editar</button>
                                         </form>
-                                        <form action="{{ route('edit-user') }}" method="post">
-                                            @csrf
-                                            <button type="submit" class="btn btn-primary">Eliminar</button>
+                
                                         </form>
                                     </td>
                                 </tr>
