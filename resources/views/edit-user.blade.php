@@ -1,4 +1,3 @@
-<!-- filepath: /c:/xampp/htdocs/crud/resources/views/edit-user.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

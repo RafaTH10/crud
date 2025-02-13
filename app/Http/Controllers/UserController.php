@@ -31,7 +31,6 @@ class UserController extends Controller
         ]);
 
         return redirect('/user')->with('success', 'Usuario creado con éxito');
-
     }
 
     public function LoadEditUserForm($id){
@@ -53,7 +52,12 @@ class UserController extends Controller
         $user->numero_telefono = $request->numero_telefono;
         $user->save();
 
-        return redirect()->route('users.index')->with('success', 'Usuario actualizado correctamente');
+        return redirect('/user')->with('success', 'Usuario actualizado correctamente');
     }
 
+    public function deleteUser($id){
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/user')->with('success', 'Usuario eliminado correctamente');
+    }
 }

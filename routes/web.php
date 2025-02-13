@@ -3,11 +3,7 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-Route::get('/user',[UserController::class,'LoadAllUsers']);
+Route::get('/user', [UserController::class, 'loadAllUsers'])->name('users.index');
 
 Route::get('/add-user', [UserController::class, 'LoadAddUserForm']);
 
@@ -17,5 +13,4 @@ Route::get('/edit-user/{id}', [UserController::class, 'LoadEditUserForm']);
 
 Route::post('/edit-user/{id}', [UserController::class, 'EditUser'])->name('edit-user');
 
-
-
+Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('delete-user');

@@ -39,12 +39,8 @@
                                     <td>{{ $user->created_at->diffForHumans() }}</td>
                                     <td>{{ $user->updated_at->diffForHumans() }}</td>
                                     <td>
-                                        <form action="{{ route('edit-user') }}" method="post">
-                                            @csrf
-                                            <button type="submit" class="btn btn-primary">Editar</button>
-                                        </form>
-                
-                                        </form>
+                                        <a href="{{ route('edit-user', ['id' => $user->id]) }}" class="btn btn-primary">Editar</a>
+                                        <a href="{{ route('delete-user', ['id' => $user->id]) }}" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                         @endforeach
