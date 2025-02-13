@@ -48,6 +48,11 @@
         <div class="card">
             <div class="card-header">Editar Usuario</div>
             <div class="card-body">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <form action="{{ route('edit-user', ['id' => $user->id]) }}" method="post">
                     @csrf
                     @method('POST')

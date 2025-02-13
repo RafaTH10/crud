@@ -55,9 +55,26 @@ class UserController extends Controller
         return redirect('/user')->with('success', 'Usuario actualizado correctamente');
     }
 
-    public function deleteUser($id){
-        $user = User::find($id);
+    public function deleteUser($id)
+    {
+        $user = User::findOrFail($id);
         $user->delete();
-        return redirect('/user')->with('success', 'Usuario eliminado correctamente');
+
+        return redirect()->route('users.index')->with('success', 'Usuario eliminado exitosamente.');
     }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nombre_completo' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'numero_telefono' => 'required|numeric',
+        ]);
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+
+        return redirect()->route('users.index', ['id' => $id])->with('success', 'Usuario editado exitosamente.');
+    }
+
+
 }
