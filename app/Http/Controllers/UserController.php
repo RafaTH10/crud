@@ -20,7 +20,7 @@ class UserController extends Controller
             'nombre_completo' => 'required|string',
             'email' => 'required|email|unique:users,email',
             'numero_telefono' => 'required|integer',
-            'contraseña' => 'required|confirmed|min:4|max:8',
+            'contraseña' => 'required|confirmed',
         ]);
 
         User::create([

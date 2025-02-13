@@ -32,7 +32,7 @@
 
                     <div class="mb-3">
                         <label for="numero_telefono" class="form-label">Número de Teléfono</label>
-                        <input type="text" name="numero_telefono" class="form-control" id="numero_telefono" placeholder="Ingrese su Número de Teléfono" value="{{ old('numero_telefono') }}">
+                        <input type="number" name="numero_telefono" class="form-control" id="numero_telefono" placeholder="Ingrese su Número de Teléfono" value="{{ old('numero_telefono') }}">
                         @error('numero_telefono')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
